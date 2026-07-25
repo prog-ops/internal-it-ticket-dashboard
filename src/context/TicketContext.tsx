@@ -137,12 +137,20 @@ export const TicketProvider: React.FC<{ children: React.ReactNode }> = ({ childr
           }
         }
         // Status filter
-        if (statusFilter !== 'All' && t.status !== statusFilter) {
-          return false;
+        if (statusFilter !== 'All') {
+          if (statusFilter === 'Resolved/Closed') {
+            if (t.status !== 'Resolved' && t.status !== 'Closed') return false;
+          } else if (t.status !== statusFilter) {
+            return false;
+          }
         }
         // Priority filter
-        if (priorityFilter !== 'All' && t.priority !== priorityFilter) {
-          return false;
+        if (priorityFilter !== 'All') {
+          if (priorityFilter === 'High/Critical') {
+            if (t.priority !== 'High' && t.priority !== 'Critical') return false;
+          } else if (t.priority !== priorityFilter) {
+            return false;
+          }
         }
         // Category filter
         if (categoryFilter !== 'All' && t.category !== categoryFilter) {

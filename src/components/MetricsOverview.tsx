@@ -50,8 +50,8 @@ export const MetricsOverview: React.FC = () => {
       ring: 'ring-rose-500/40',
       tint: 'from-rose-500/8 to-red-500/5 border-rose-500/20 dark:from-rose-500/12 dark:to-red-500/8 dark:border-rose-500/25',
       iconClr: 'text-rose-600 dark:text-rose-400 bg-rose-500/10',
-      active: priorityFilter === 'High' || priorityFilter === 'Critical',
-      onClick: () => { clearFilters(); setPriorityFilter('High' as FilterPriority); },
+      active: priorityFilter === 'High/Critical',
+      onClick: () => { clearFilters(); setPriorityFilter('High/Critical' as FilterPriority); },
     },
     {
       id: 'resolved',
@@ -61,8 +61,8 @@ export const MetricsOverview: React.FC = () => {
       ring: 'ring-emerald-500/40',
       tint: 'from-emerald-500/8 to-teal-500/5 border-emerald-500/20 dark:from-emerald-500/12 dark:to-teal-500/8 dark:border-emerald-500/25',
       iconClr: 'text-emerald-600 dark:text-emerald-400 bg-emerald-500/10',
-      active: statusFilter === 'Resolved' || statusFilter === 'Closed',
-      onClick: () => { clearFilters(); setStatusFilter('Resolved' as FilterStatus); },
+      active: statusFilter === 'Resolved/Closed',
+      onClick: () => { clearFilters(); setStatusFilter('Resolved/Closed' as FilterStatus); },
     },
   ];
 

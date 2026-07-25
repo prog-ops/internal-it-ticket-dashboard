@@ -45,8 +45,8 @@ export interface DashboardMetrics {
   closedTickets: number;
 }
 
-export type FilterStatus = TicketStatus | 'All';
-export type FilterPriority = TicketPriority | 'All';
+export type FilterStatus = TicketStatus | 'All' | 'Resolved/Closed';
+export type FilterPriority = TicketPriority | 'All' | 'High/Critical';
 export type FilterCategory = TicketCategory | 'All';
 
 export type SortBy = 'newest' | 'oldest' | 'priority-desc' | 'priority-asc' | 'status';
